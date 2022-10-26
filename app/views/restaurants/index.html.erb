@@ -1,0 +1,11 @@
+<div class="h1 text-center">
+  <h1>The Wonderful List of Restaurants</h1>
+</div>
+
+<div class="grid text-center">
+  <% @restaurant.each do |restaurant| %>
+    <div class="g-col-4">
+      <p><%= link_to restaurant.name, restaurant_path(restaurant) %>  || <%= link_to "Add a review", new_restaurant_review_path(restaurant) %></p>
+    </div>
+  <% end %>
+</div>

@@ -9,9 +9,23 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+        <style>
+    body {background-color: AliceBlue;}
+    h1   {color: blue;}
+    p    {color: red;}
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid d-flex justify-content-between">
+        <%= link_to "KIKI'S REVIEWABLE RESTAURANTS", restaurants_path, class: "navbar-brand"%>
+        <%= link_to "ADD A NEW RESTO", new_restaurant_path, class: "navbar-brand"%>
+
+      </div>
+    </nav>
+    <div class="container-fluid text-center">
+        <%= yield %>
+    </div>
   </body>
 </html>
